@@ -1,3 +1,5 @@
+nao me julgue, é só uma revisão kkk
+
 # Ementa EDII – Unidade III
 
 ## Estruturas de dados
@@ -5,7 +7,7 @@
 - [X] Vetores
 - [X] Pilhas
 - [X] Filas
-- [ ] Listas Encadeadas (simples e duplas)
+- [X] Listas Encadeadas (simples e duplas)
 - [ ] Árvores Binárias
 - [ ] Árvores binárias de busca
 - [ ] Filas de Prioridade e Heaps
