@@ -2,9 +2,9 @@
 
 ## Estruturas de dados
 
-- [ ] Vetores
-- [ ] Pilhas
-- [ ] Filas
+- [X] Vetores
+- [X] Pilhas
+- [X] Filas
 - [ ] Listas Encadeadas (simples e duplas)
 - [ ] Árvores Binárias
 - [ ] Árvores binárias de busca
