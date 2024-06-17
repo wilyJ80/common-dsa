@@ -1,5 +1,7 @@
 """
 Easiest way is by using collections' deque
+
+deque is a very flexible option for this stuff and many more
 """
 from collections import deque
 
