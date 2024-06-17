@@ -44,3 +44,4 @@ nao me julgue, é só uma revisão kkk
 amortizada. Lembrar de entender se algoritmos são O(1), O(n), O(logn), etc., no pior caso
 e no caso médio
 
+Sugestao: usar pdoc para testar documentacao
