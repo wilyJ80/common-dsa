@@ -29,9 +29,26 @@ def test_undo(editor):
     editor.text = 'foobar'
     editor.add('something')
     editor.add('else')
+    editor.add('andmore')
+
+    editor.undo()
+    assert editor.text == 'foobarsomethingelse'
 
     editor.undo()
     assert editor.text == 'foobarsomething'
 
-    # editor.undo()
-    # assert editor.text == 'foobar'
+    editor.undo()
+    assert editor.text == ''
+
+    def test_redo(editor):
+        editor.text = 'foobar'
+        editor.add('something')
+        editor.add('else')
+        editor.add('andmore')
+
+        editor.undo()
+        assert editor.text == 'foobarsomethingelseandmore'
+
+        editor.undo()
+        editor.undo()
+        assert editor.text == 'foobarsomething'

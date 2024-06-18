@@ -45,6 +45,11 @@ class Editor:
             self.currentHistory = self.currentHistory.prev
             self.text = self.currentHistory.text
 
+    def redo(self):
+        if self.currentHistory.next:
+            self.currentHistory = self.currentHistory.next
+            self.text = self.currentHistory.text
+
 
 if __name__ == "__main__":
     editor = Editor("edits.txt")
