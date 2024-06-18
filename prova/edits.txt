@@ -1,0 +1,24 @@
+add Hello
+add  World
+add !
+replace 5 Friends
+delete 1
+add How are you?
+delete 4
+add ?
+undo
+redo
+add I hope you are well.
+delete 6
+add :(
+replace 4 happy.
+delete 5
+add add.
+add Stay safe.
+delete 0
+undo
+undo
+undo
+redo
+delete 5
+add everyone!
