@@ -52,3 +52,8 @@ def test_undo(editor):
         editor.undo()
         editor.undo()
         assert editor.text == 'foobarsomething'
+
+    def test_clean(editor):
+        editor.text = 'foobar'
+        editor.clean()
+        assert editor.text == ''

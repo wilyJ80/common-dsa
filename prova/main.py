@@ -50,6 +50,9 @@ class Editor:
             self.currentHistory = self.currentHistory.next
             self.text = self.currentHistory.text
 
+    def clean(self):
+        self.text = ''
+
 
 if __name__ == "__main__":
     editor = Editor("edits.txt")
