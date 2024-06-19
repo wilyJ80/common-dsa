@@ -1,5 +1,5 @@
 import pytest
-from linereader import Editor
+from filereader import Editor
 
 
 @pytest.fixture

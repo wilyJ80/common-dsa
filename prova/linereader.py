@@ -14,6 +14,12 @@ class Editor:
         self.text = ''
         self.history_head = HistoryEntry(self.text)
         self.currentHistory = self.history_head
+        self.commands = {"add": self.add,
+                         "replace": self.replace,
+                         "delete": self.delete,
+                         "undo": self.undo,
+                         "redo": self.redo,
+                         "clean": self.clean}
 
         try:
             with open(commands_file, 'r') as file:
@@ -21,6 +27,26 @@ class Editor:
                 self.line = file.readline().strip()
         except Exception as e:
             raise e
+
+    def eval_line(self, line):
+        parts = line.split(maxsplit=1)
+        command = parts[0]
+
+        if len(parts) == 1:
+            self.commands[command]()
+
+        elif len(parts) == 2:
+            text_to_operate = parts[1]
+
+            if command == 'replace':
+                subparts = text_to_operate.split(maxsplit=1)
+                subcommand = subparts[0]
+                subtext_to_operate = subparts[1]
+
+                self.commands[command](subcommand, subtext_to_operate)
+
+            else:
+                self.commands[command](text_to_operate)
 
     def add_to_history(self, text):
         new_entry = HistoryEntry(text)
@@ -33,6 +59,7 @@ class Editor:
         self.add_to_history(self.text)
 
     def replace(self, quantity, string):
+        quantity = int(quantity)
         self.text = self.text[:-quantity] + string
         self.add_to_history(self.text)
 
